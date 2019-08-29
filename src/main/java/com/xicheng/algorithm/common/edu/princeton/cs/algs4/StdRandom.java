@@ -125,7 +125,9 @@ public final class StdRandom {
      * @throws IllegalArgumentException if {@code n <= 0}
      */
     public static int uniform(int n) {
-        if (n <= 0) throw new IllegalArgumentException("argument must be positive: " + n);
+        if (n <= 0) {
+            throw new IllegalArgumentException("argument must be positive: " + n);
+        }
         return random.nextInt(n);
     }
 
@@ -138,7 +140,9 @@ public final class StdRandom {
      * @throws IllegalArgumentException if {@code n <= 0}
      */
     public static long uniform(long n) {
-        if (n <= 0L) throw new IllegalArgumentException("argument must be positive: " + n);
+        if (n <= 0L) {
+            throw new IllegalArgumentException("argument must be positive: " + n);
+        }
 
         // https://docs.oracle.com/javase/8/docs/api/java/util/Random.html#longs-long-long-long-
         long r = random.nextLong();
@@ -214,8 +218,9 @@ public final class StdRandom {
      * @throws IllegalArgumentException unless {@code 0} &le; {@code p} &le; {@code 1.0}
      */
     public static boolean bernoulli(double p) {
-        if (!(p >= 0.0 && p <= 1.0))
+        if (!(p >= 0.0 && p <= 1.0)) {
             throw new IllegalArgumentException("probability p must be between 0.0 and 1.0: " + p);
+        }
         return uniform() < p;
     }
 
@@ -294,10 +299,12 @@ public final class StdRandom {
      * @throws IllegalArgumentException unless {@code lambda > 0.0} and not infinite
      */
     public static int poisson(double lambda) {
-        if (!(lambda > 0.0))
+        if (!(lambda > 0.0)) {
             throw new IllegalArgumentException("lambda must be positive: " + lambda);
-        if (Double.isInfinite(lambda))
+        }
+        if (Double.isInfinite(lambda)) {
             throw new IllegalArgumentException("lambda must not be infinite: " + lambda);
+        }
         // using algorithm given by Knuth
         // see http://en.wikipedia.org/wiki/Poisson_distribution
         int k = 0;
@@ -329,8 +336,9 @@ public final class StdRandom {
      * @throws IllegalArgumentException unless {@code alpha > 0.0}
      */
     public static double pareto(double alpha) {
-        if (!(alpha > 0.0))
+        if (!(alpha > 0.0)) {
             throw new IllegalArgumentException("alpha must be positive: " + alpha);
+        }
         return Math.pow(1 - uniform(), -1.0/alpha) - 1.0;
     }
 
@@ -354,16 +362,20 @@ public final class StdRandom {
      * @throws IllegalArgumentException unless {@code probabilities[i] >= 0.0} for each index {@code i}
      */
     public static int discrete(double[] probabilities) {
-        if (probabilities == null) throw new IllegalArgumentException("argument array is null");
+        if (probabilities == null) {
+            throw new IllegalArgumentException("argument array is null");
+        }
         double EPSILON = 1.0E-14;
         double sum = 0.0;
         for (int i = 0; i < probabilities.length; i++) {
-            if (!(probabilities[i] >= 0.0))
+            if (!(probabilities[i] >= 0.0)) {
                 throw new IllegalArgumentException("array entry " + i + " must be nonnegative: " + probabilities[i]);
+            }
             sum += probabilities[i];
         }
-        if (sum > 1.0 + EPSILON || sum < 1.0 - EPSILON)
+        if (sum > 1.0 + EPSILON || sum < 1.0 - EPSILON) {
             throw new IllegalArgumentException("sum of array entries does not approximately equal 1.0: " + sum);
+        }
 
         // the for loop may not return a value when both r is (nearly) 1.0 and when the
         // cumulative sum is less than 1.0 (as a result of floating-point roundoff error)
@@ -372,7 +384,9 @@ public final class StdRandom {
             sum = 0.0;
             for (int i = 0; i < probabilities.length; i++) {
                 sum = sum + probabilities[i];
-                if (sum > r) return i;
+                if (sum > r) {
+                    return i;
+                }
             }
         }
     }
@@ -389,24 +403,31 @@ public final class StdRandom {
      * @throws IllegalArgumentException if sum of frequencies exceeds {@code Integer.MAX_VALUE} (2<sup>31</sup> - 1)
      */
     public static int discrete(int[] frequencies) {
-        if (frequencies == null) throw new IllegalArgumentException("argument array is null");
+        if (frequencies == null) {
+            throw new IllegalArgumentException("argument array is null");
+        }
         long sum = 0;
         for (int i = 0; i < frequencies.length; i++) {
-            if (frequencies[i] < 0)
+            if (frequencies[i] < 0) {
                 throw new IllegalArgumentException("array entry " + i + " must be nonnegative: " + frequencies[i]);
+            }
             sum += frequencies[i];
         }
-        if (sum == 0)
+        if (sum == 0) {
             throw new IllegalArgumentException("at least one array entry must be positive");
-        if (sum >= Integer.MAX_VALUE)
+        }
+        if (sum >= Integer.MAX_VALUE) {
             throw new IllegalArgumentException("sum of frequencies overflows an int");
+        }
 
         // pick index i with probabilitity proportional to frequency
         double r = uniform((int) sum);
         sum = 0;
         for (int i = 0; i < frequencies.length; i++) {
             sum += frequencies[i];
-            if (sum > r) return i;
+            if (sum > r) {
+                return i;
+            }
         }
 
         // can't reach here
@@ -424,8 +445,9 @@ public final class StdRandom {
      * @throws IllegalArgumentException unless {@code lambda > 0.0}
      */
     public static double exp(double lambda) {
-        if (!(lambda > 0.0))
+        if (!(lambda > 0.0)) {
             throw new IllegalArgumentException("lambda must be positive: " + lambda);
+        }
         return -Math.log(1 - uniform()) / lambda;
     }
 
@@ -570,10 +592,13 @@ public final class StdRandom {
      *         of {@code 0}, {@code 1}, ..., {@code n-1}
      */
     public static int[] permutation(int n) {
-        if (n < 0) throw new IllegalArgumentException("argument is negative");
+        if (n < 0) {
+            throw new IllegalArgumentException("argument is negative");
+        }
         int[] perm = new int[n];
-        for (int i = 0; i < n; i++)
+        for (int i = 0; i < n; i++) {
             perm[i] = i;
+        }
         shuffle(perm);
         return perm;
     }
@@ -589,8 +614,12 @@ public final class StdRandom {
      *         of {@code k} of the elements from {@code 0}, {@code 1}, ..., {@code n-1}
      */
     public static int[] permutation(int n, int k) {
-        if (n < 0) throw new IllegalArgumentException("argument is negative");
-        if (k < 0 || k > n) throw new IllegalArgumentException("k must be between 0 and n");
+        if (n < 0) {
+            throw new IllegalArgumentException("argument is negative");
+        }
+        if (k < 0 || k > n) {
+            throw new IllegalArgumentException("k must be between 0 and n");
+        }
         int[] perm = new int[k];
         for (int i = 0; i < k; i++) {
             int r = uniform(i+1);    // between 0 and i
@@ -599,7 +628,9 @@ public final class StdRandom {
         }
         for (int i = k; i < n; i++) {
             int r = uniform(i+1);    // between 0 and i
-            if (r < k) perm[r] = i;
+            if (r < k) {
+                perm[r] = i;
+            }
         }
         return perm;
     }
@@ -626,7 +657,9 @@ public final class StdRandom {
      */
     public static void main(String[] args) {
         int n = Integer.parseInt(args[0]);
-        if (args.length == 2) StdRandom.setSeed(Long.parseLong(args[1]));
+        if (args.length == 2) {
+            StdRandom.setSeed(Long.parseLong(args[1]));
+        }
         double[] probabilities = { 0.5, 0.3, 0.1, 0.1 };
         int[] frequencies = { 5, 3, 1, 1 };
         String[] a = "A B C D E F G".split(" ");
@@ -641,8 +674,9 @@ public final class StdRandom {
             StdOut.printf("%1d ",   discrete(frequencies));
             StdOut.printf("%11d ",  uniform(100000000000L));
             StdRandom.shuffle(a);
-            for (String s : a)
+            for (String s : a) {
                 StdOut.print(s);
+            }
             StdOut.println();
         }
     }
