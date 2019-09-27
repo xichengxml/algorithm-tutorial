@@ -2,6 +2,9 @@ package com.xicheng.algorithm.chapter01.code082;
 
 import org.junit.Test;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * description
  *
@@ -40,5 +43,22 @@ public class FixedCapacityStringStackTest {
 		System.out.println(strings[size--]);
 		size = 1;
 		System.out.println(strings[--size]);
+	}
+
+	/**
+	 * for-each等价于while迭代器，测试一下fail fast
+	 * 添加和删除都会报错
+	 */
+	@Test
+	public void testForEach() {
+		List<String> stringList = new ArrayList<>();
+		stringList.add("1");
+		stringList.add("2");
+		stringList.add("3");
+		for (String s : stringList) {
+			System.out.println(s);
+			// stringList.remove(s);
+			stringList.add("4");
+		}
 	}
 }
