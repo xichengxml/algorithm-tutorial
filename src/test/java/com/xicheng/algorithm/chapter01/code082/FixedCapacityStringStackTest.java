@@ -10,7 +10,7 @@ import org.junit.Test;
  */
 public class FixedCapacityStringStackTest {
 
-	private FixedCapacityStringStack fixedCapacityStringStack = new FixedCapacityStringStack(100);
+	private FixedCapacityStringStack fixedCapacityStringStack = new FixedCapacityStringStack(3);
 
 	private static final String STRIKE = "-";
 

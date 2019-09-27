@@ -32,6 +32,9 @@ public class FixedCapacityStringStack {
 	}
 
 	public void push(String value) {
+		if (size >= entry.length) {
+			throw new RuntimeException("元素数量不能超过容器容量");
+		}
 		entry[size++] = value;
 	}
 

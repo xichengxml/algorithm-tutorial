@@ -21,6 +21,9 @@ public class FixedCapacityItemStack<T> {
 	}
 
 	public void push(T t) {
+		if (size >= entry.length) {
+			throw new RuntimeException("元素数量不能超过容器容量");
+		}
 		entry[size++] = t;
 	}
 
