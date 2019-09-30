@@ -1,3 +1,4 @@
 - 算法第四版练习：对代码做了适当修改，便于在ide中调试运行
+- com.xicheng.algorithm为练习代码；com.xicheng.algorithm.common.edu.princeton.cs.algs4为算法书中的工具类
 - 命名规则：按照代码所在页码命名，例code066表示第66页的代码
 - 注：code141之前的代码可能页码有误，因为用的是pdf页码，从code141之后改为纸质书页码
