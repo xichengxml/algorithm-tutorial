@@ -4,9 +4,9 @@ import com.xicheng.algorithm.common.edu.princeton.cs.algs4.Bag;
 import com.xicheng.algorithm.common.edu.princeton.cs.algs4.StdOut;
 
 /**
- * 背包的典型用例
+ * 背包的典型用例: 求平均值，求方差
  *
- * @author liubin52
+ * @author xichengxml
  * @date 2019-08-29 22:24:54
  */
 public class BagExample {

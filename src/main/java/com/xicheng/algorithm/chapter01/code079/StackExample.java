@@ -6,7 +6,7 @@ import com.xicheng.algorithm.common.edu.princeton.cs.algs4.StdOut;
 /**
  * 栈的典型用例
  *
- * @author liubin52
+ * @author xichengxml
  * @date 2019-08-29 22:46:11
  */
 public class StackExample {

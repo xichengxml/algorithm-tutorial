@@ -6,7 +6,7 @@ import com.xicheng.algorithm.common.edu.princeton.cs.algs4.StdOut;
 /**
  * 队列的典型用例
  *
- * @author liubin52
+ * @author xichengxml
  * @date 2019-08-29 22:42:00
  */
 public class QueueExample {

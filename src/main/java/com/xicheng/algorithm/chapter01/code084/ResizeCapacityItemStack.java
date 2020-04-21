@@ -2,8 +2,10 @@ package com.xicheng.algorithm.chapter01.code084;
 
 /**
  * 可自动扩容、缩容的栈
+ * pop()时，被弹出的元素的引用实际上还存在在数组中，这个元素实际上已经是一个孤儿了，再也不会被访问了，但java的垃圾收集器没法知道这一点，
+ * 除非该引用被覆盖，即使用例已经不再需要这个元素了，数组中的引用仍然可以让它继续存在，保存一个不需要的对象的引用称为游离
  *
- * @author liubin52
+ * @author xichengxml
  * @date 2019-08-30 16:22:01
  */
 public class ResizeCapacityItemStack<T> {

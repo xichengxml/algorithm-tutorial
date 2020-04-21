@@ -15,7 +15,7 @@ import com.xicheng.algorithm.common.edu.princeton.cs.algs4.StdOut;
  * q
  * 3.0
  *
- * @author liubin52
+ * @author xichengxml
  * @date 2019-08-30 14:06:24
  */
 public class Evaluate {

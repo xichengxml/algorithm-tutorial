@@ -1,9 +1,9 @@
 package com.xicheng.algorithm.chapter01.code084;
 
 /**
- * description
+ * description 定容栈
  *
- * @author liubin52
+ * @author xichengxml
  * @date 2019-08-30 16:06:09
  */
 public class FixedCapacityItemStack<T> {
