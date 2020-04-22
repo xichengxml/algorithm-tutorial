@@ -7,7 +7,7 @@ import lombok.extern.slf4j.Slf4j;
  *
  * 链表：第一期只实现了对first结点的操作，待实现双链表
  * {@link java.util.LinkedList}
- * @author liubin52
+ * @author xichengxml
  * @date 2019-09-29 18:04:12
  */
 @Slf4j
@@ -92,9 +92,9 @@ public class MyLinkedList<T> {
 		/**
 		 * 下一个节点引用
 		 */
-		private Node next;
+		private Node<T> next;
 
-		private Node(T item, Node next) {
+		private Node(T item, Node<T> next) {
 			this.item = item;
 			this.next = next;
 		}
