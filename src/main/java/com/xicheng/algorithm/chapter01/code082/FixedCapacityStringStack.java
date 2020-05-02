@@ -4,7 +4,7 @@ package com.xicheng.algorithm.chapter01.code082;
  * 定容栈
  * 注意：capacity >= size
  *
- * @author liubin52
+ * @author xichengxml
  * @date 2019-08-30 14:54:44
  */
 public class FixedCapacityStringStack {

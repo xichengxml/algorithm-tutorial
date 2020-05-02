@@ -8,7 +8,7 @@ import java.util.Stack;
  * 链表实现栈
  * {@link Stack}是数组实现
  *
- * @author liubin52
+ * @author xichengxml
  * @date 2019-09-30 13:34:58
  */
 public class MyLinkedListStack<T> implements Iterable<T> {
@@ -32,7 +32,7 @@ public class MyLinkedListStack<T> implements Iterable<T> {
 	}
 
 	@Override
-	public Iterator iterator() {
+	public Iterator<T> iterator() {
 		return null;
 	}
 
