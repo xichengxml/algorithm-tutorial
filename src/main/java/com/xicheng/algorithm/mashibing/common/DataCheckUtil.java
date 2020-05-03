@@ -2,6 +2,7 @@ package com.xicheng.algorithm.mashibing.common;
 
 import com.xicheng.algorithm.mashibing.sort.T01_SelectionSort;
 import com.xicheng.algorithm.mashibing.sort.T02_SelectionSort;
+import com.xicheng.algorithm.mashibing.sort.T04_BubbleSort;
 import lombok.extern.slf4j.Slf4j;
 
 import java.util.Arrays;
@@ -36,7 +37,7 @@ public class DataCheckUtil {
 
         Arrays.sort(arr);
         log.info("result: {}", Arrays.toString(arr));
-        T01_SelectionSort.sort(arrCopy);
+        T04_BubbleSort.sort(arrCopy);
 
         for (int i = 0; i < length; i++) {
             int result01 = arr[i];
@@ -57,5 +58,6 @@ public class DataCheckUtil {
                 log.info("your sort algorithm is not good, it has some bugs");
             }
         }
+        log.info("Congratulations! Your algorithm past this test");
     }
 }

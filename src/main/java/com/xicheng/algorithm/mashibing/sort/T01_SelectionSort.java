@@ -15,7 +15,7 @@ import java.util.Arrays;
 public class T01_SelectionSort {
 
     /**
-     * 如果按这种方式来写，本质上是i和j位置比较并交换，所以需要优化
+     * 如果按这种方式来写，本质上是i和i + 1位置比较并交换，所以需要优化
      * @param args
      */
     public static void main(String[] args) {
