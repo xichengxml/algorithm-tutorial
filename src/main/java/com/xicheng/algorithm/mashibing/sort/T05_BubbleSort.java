@@ -1,6 +1,6 @@
 package com.xicheng.algorithm.mashibing.sort;
 
-import com.xicheng.algorithm.mashibing.common.ArraySortUtil;
+import com.xicheng.algorithm.mashibing.util.ArraySortUtil;
 
 /**
  * description 把冒泡排序改造成最优为O(n)的形式

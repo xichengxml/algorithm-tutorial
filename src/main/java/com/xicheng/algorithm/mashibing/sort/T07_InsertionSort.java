@@ -1,6 +1,6 @@
 package com.xicheng.algorithm.mashibing.sort;
 
-import com.xicheng.algorithm.mashibing.common.ArraySortUtil;
+import com.xicheng.algorithm.mashibing.util.ArraySortUtil;
 import lombok.extern.slf4j.Slf4j;
 
 /**

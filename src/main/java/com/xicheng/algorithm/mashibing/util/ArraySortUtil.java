@@ -1,4 +1,4 @@
-package com.xicheng.algorithm.mashibing.common;
+package com.xicheng.algorithm.mashibing.util;
 
 /**
  * description

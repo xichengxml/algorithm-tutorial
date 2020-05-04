@@ -1,7 +1,5 @@
-package com.xicheng.algorithm.mashibing.common;
+package com.xicheng.algorithm.mashibing.util;
 
-import com.xicheng.algorithm.mashibing.sort.T01_SelectionSort;
-import com.xicheng.algorithm.mashibing.sort.T02_SelectionSort;
 import com.xicheng.algorithm.mashibing.sort.T04_BubbleSort;
 import lombok.extern.slf4j.Slf4j;
 
