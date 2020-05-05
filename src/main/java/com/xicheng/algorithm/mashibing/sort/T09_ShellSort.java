@@ -15,9 +15,10 @@ import java.util.Arrays;
 public class T09_ShellSort {
 
     public static void main(String[] args) {
+        long startTime = System.nanoTime();
         int[] initArray = ArraySortUtil.getInitArray();
         sort(initArray);
-        log.info("sort result: {}", initArray);
+        log.info("sort result: {}, runTime: {}", initArray, System.nanoTime() - startTime);
     }
 
     public static void sort(int[] arr) {
