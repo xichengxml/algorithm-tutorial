@@ -21,6 +21,7 @@ public class T01_SelectionSort {
     public static void main(String[] args) {
         int[] initArray = ArraySortUtil.getInitArray();
         sort(initArray);
+        log.info("T01_SelectionSort sort result: {}", Arrays.toString(initArray));
     }
 
     public static void sort(int[] initArray) {
@@ -28,14 +29,18 @@ public class T01_SelectionSort {
         int length = initArray.length;
 
         for (int i = 0; i < length; i++) {
-            int minPos = i;
-            for (int j = i + 1; j < length; j++) {
-                if (initArray[j] < initArray[minPos]) {
-                    minPos = j;
-                }
-            }
-            ArraySortUtil.swap(initArray, minPos, i);
+            insertMinToStart(i, initArray);
         }
-        log.info("T01_SelectionSort main result: {}", Arrays.toString(initArray));
+    }
+
+    private static void insertMinToStart(int startPos, int[] arr) {
+        int minPos = startPos;
+        for (int j = startPos + 1; j < arr.length; j++) {
+            if (arr[j] < arr[minPos]) {
+                minPos = j;
+            }
+        }
+        ArraySortUtil.swap(arr, minPos, startPos);
+        log.info("sort middle: {}", Arrays.toString(arr));
     }
 }

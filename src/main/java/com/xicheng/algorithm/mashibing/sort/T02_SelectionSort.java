@@ -15,11 +15,10 @@ import java.util.Arrays;
 @Slf4j
 public class T02_SelectionSort {
 
-    private static final String CLASS_NAME = T02_SelectionSort.class.getName();
-
     public static void main(String[] args) {
         int[] initArray = ArraySortUtil.getInitArray();
         sort(initArray);
+        log.info("sort result: {}", Arrays.toString(initArray));
     }
 
     public static void sort(int[] initArray) {
@@ -28,18 +27,22 @@ public class T02_SelectionSort {
         for (int i = 0; i < length; i++) {
             int minPos = i;
             int maxPos = length - 1 - i;
-            for (int j = i + 1; j < length - i; j++) {
-                if (initArray[j] < initArray[minPos]) {
-                    minPos = j;
-                }
-                if (initArray[j] > initArray[maxPos]) {
-                    maxPos = j;
-                }
-            }
-            ArraySortUtil.swap(initArray, minPos, i);
-            ArraySortUtil.swap(initArray, maxPos, length - 1 - i);
+            insertMinAndMaxToEdge(i, minPos, maxPos, initArray);
         }
+    }
 
-        log.info("{} main sort result: {}", CLASS_NAME, Arrays.toString(initArray));
+    private static void insertMinAndMaxToEdge(int startPos, int minPos, int maxPos, int[] arr) {
+        // + 1的目的是自己不用再和自己比，当然不加1也可以;
+        for (int j = startPos + 1; j < arr.length - startPos; j++) {
+            if (arr[j] < arr[minPos]) {
+                minPos = j;
+            }
+            if (arr[j] > arr[maxPos]) {
+                maxPos = j;
+            }
+        }
+        ArraySortUtil.swap(arr, minPos, startPos);
+        ArraySortUtil.swap(arr, maxPos, arr.length - 1 - startPos);
+        log.info("sort middle: {}", Arrays.toString(arr));
     }
 }
