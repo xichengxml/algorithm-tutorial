@@ -1,4 +1,4 @@
-package com.xicheng.algorithm.application.additivenumber;
+package com.xicheng.algorithm.application;
 
 import org.junit.Test;
 
@@ -7,7 +7,7 @@ import org.junit.Test;
  * @date 2018/12/28
  * @description 输入111会报错
  */
-public class AdditiveNumberTest02 {
+public class C004_AdditiveNumberTest02 {
 
     public static boolean isAdditiveNumber(String num) {
         int length = num.length();

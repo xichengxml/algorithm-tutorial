@@ -1,4 +1,4 @@
-package com.xicheng.algorithm.application.plusone;
+package com.xicheng.algorithm.application;
 
 import java.util.Arrays;
 
@@ -7,7 +7,7 @@ import java.util.Arrays;
  * @date 2018/12/24
  * @description
  */
-public class PlusOneTest01 {
+public class C009_PlusOneTest01 {
 
     public static int[] plusOne(int[] digits) {
         int num = 0;

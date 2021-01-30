@@ -1,4 +1,4 @@
-package com.xicheng.algorithm.application.thirdmaximumdata;
+package com.xicheng.algorithm.application;
 
 import java.util.Arrays;
 
@@ -7,7 +7,7 @@ import java.util.Arrays;
  * @date 2018/12/26
  * @description
  */
-public class MaximumTest02 {
+public class C013_MaximumTest01 {
     public static int thirdMax(int[] nums) {
         int length = nums.length;
         if (length == 1) {
@@ -28,13 +28,17 @@ public class MaximumTest02 {
                 result = nums[i];
                 break;
             }
+            result = nums[length - 1];
+        }
+        if (cnt == 2) {
             result = nums[0];
         }
         return result;
     }
 
     public static void main(String[] args) {
-        int[] nums = {2, 2, 3, 1};
+        int[] nums = {1, 2, 2, 3, 5, 5};
+        int[] nums2 = {1, 1, 2};
         System.out.println(thirdMax(nums));
     }
 }

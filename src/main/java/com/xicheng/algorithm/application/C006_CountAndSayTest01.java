@@ -1,11 +1,11 @@
-package com.xicheng.algorithm.application.countandsay;
+package com.xicheng.algorithm.application;
 
 /**
  * @author xichengxml
  * @date 2018/12/25
  * @description
  */
-public class CountAndSayTest01 {
+public class C006_CountAndSayTest01 {
 
     public String countAndSay(int n) {
         String str = null;

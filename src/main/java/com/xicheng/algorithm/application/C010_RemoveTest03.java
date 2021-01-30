@@ -1,11 +1,11 @@
-package com.xicheng.algorithm.application.removeduplicatesfromsortedlist;
+package com.xicheng.algorithm.application;
 
 /**
  * @author xichengxml
  * @date 2018/12/25
  * @description
  */
-public class RemoveTest03 {
+public class C010_RemoveTest03 {
     public static ListNode deleteDuplicates(ListNode head) {
         ListNode tmp = head;
         while (head != null && head.next != null) {

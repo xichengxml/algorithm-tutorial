@@ -1,17 +1,23 @@
-package com.xicheng.algorithm.application.buddystring;
+package com.xicheng.algorithm.application;
 
 /**
  * @author xichengxml
  * @date 2018/12/26
- * @description 输入空会报错
+ * @description aa不对
  */
-public class BuddyStringTest01 {
+public class C005_BuddyStringTest02 {
 
     public static boolean buddyStrings(String A, String B) {
         int lenA = A.length();
         int lenB = B.length();
+        if (lenA < 2 || lenB < 2) {
+            return false;
+        }
         if (lenA != lenB) {
             return false;
+        }
+        if (A.equals(B)) {
+            return true;
         }
         int cnt = 0;
         int firstDif = 0;
@@ -30,6 +36,9 @@ public class BuddyStringTest01 {
                 cnt++;
             }
         }
+        if (cnt != 2) {
+            return false;
+        }
         tmp = A.charAt(firstDif);
         StringBuilder strBuilder = new StringBuilder(A);
         strBuilder.setCharAt(firstDif, A.charAt(secondDif));
@@ -42,8 +51,8 @@ public class BuddyStringTest01 {
     }
 
     public static void main(String[] args) {
-        String A = "";
-        String B = "";
+        String A = "ab";
+        String B = "ab";
         System.out.println(buddyStrings(A, B));
     }
 }

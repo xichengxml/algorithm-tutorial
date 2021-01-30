@@ -1,4 +1,4 @@
-package com.xicheng.algorithm.application.rotatearray;
+package com.xicheng.algorithm.application;
 
 import java.util.Arrays;
 
@@ -7,7 +7,7 @@ import java.util.Arrays;
  * @date 2018/12/26
  * @description 超时
  */
-public class RotateArrayTest01 {
+public class C012_RotateArrayTest02 {
     public static void rotate(int[] nums, int k) {
         int length = nums.length;
         if (length < 2) {
@@ -16,15 +16,15 @@ public class RotateArrayTest01 {
         if (k > length) {
             k = k % length;
         }
-        int tmp = 0;
-        while (k > 0) {
-            for (int i = length - 1; i > 0; i--) {
-                tmp = nums[i];
-                nums[i] = nums[i - 1];
-                nums[i - 1] = tmp;
+        int[] result = new int[length];
+        for (int i = 0; i < length; i++) {
+            int cnt = i + k;
+            if (cnt > length - 1) {
+                cnt = cnt % length;
             }
-            k--;
+            result[cnt] = nums[i];
         }
+        System.arraycopy(result, 0, nums, 0, length);
         Arrays.stream(nums).forEach(System.out::println);
     }
 

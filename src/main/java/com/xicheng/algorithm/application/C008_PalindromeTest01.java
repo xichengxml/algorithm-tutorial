@@ -1,4 +1,4 @@
-package com.xicheng.algorithm.application.largestpalindromeproduct;
+package com.xicheng.algorithm.application;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -10,7 +10,7 @@ import java.util.Stack;
  * @date 2018/12/26
  * @description
  */
-public class PalindromeTest01 {
+public class C008_PalindromeTest01 {
 
     public static int largestPalindrome(int n) {
         int start = 0;

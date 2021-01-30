@@ -1,4 +1,4 @@
-package com.xicheng.algorithm.application.fizzbuzz;
+package com.xicheng.algorithm.application;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -8,7 +8,7 @@ import java.util.List;
  * @date 2018/12/26
  * @description
  */
-public class FizzBuzzTest01 {
+public class C007_FizzBuzzTest01 {
 
     public static List<String> fizzBuzz(int n) {
         List<String> stringList = new ArrayList<>();

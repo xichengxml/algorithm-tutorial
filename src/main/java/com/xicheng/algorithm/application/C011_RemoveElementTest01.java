@@ -1,4 +1,4 @@
-package com.xicheng.algorithm.application.removeelement;
+package com.xicheng.algorithm.application;
 
 import java.util.Arrays;
 
@@ -7,7 +7,7 @@ import java.util.Arrays;
  * @date 2018/12/25
  * @description
  */
-public class RemoveElementTest01 {
+public class C011_RemoveElementTest01 {
     public static int removeElement(int[] nums, int val) {
         int length = nums.length;
         if (length == 1 && nums[0] == val) {

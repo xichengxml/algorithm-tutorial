@@ -1,14 +1,15 @@
-package com.xicheng.algorithm.application.removeduplicatesfromsortedlist;
+package com.xicheng.algorithm.application;
 
 /**
  * @author xichengxml
  * @date 2018/12/25
- * @description 输入111会报错
+ * @description
  */
-public class RemoveTest02 {
+public class C010_RemoveTest01 {
     public static ListNode deleteDuplicates(ListNode head) {
         ListNode tmp = head;
-        while (head != null && head.next != null) {
+        // 如果head为Null，会报空指针异常
+        while (head.next != null) {
             if (head.val == head.next.val) {
                 head.next = head.next.next;
             }
@@ -20,7 +21,9 @@ public class RemoveTest02 {
     public static void main(String[] args) {
         ListNode head = new ListNode(1);
         head.next = new ListNode(1);
-        head.next.next = new ListNode(1);
+        head.next.next = new ListNode(2);
+        head.next.next.next = new ListNode(3);
+        head.next.next.next.next = new ListNode(3);
         ListNode listNode = deleteDuplicates(head);
         while (listNode != null) {
             System.out.println(listNode.val);

@@ -1,11 +1,11 @@
-package com.xicheng.algorithm.application.buddystring;
+package com.xicheng.algorithm.application;
 
 /**
  * @author xichengxml
  * @date 2018/12/26
  * @description aa不对
  */
-public class BuddyStringTest03 {
+public class C005_BuddyStringTest03 {
 
     public static boolean buddyStrings(String A, String B) {
         int lenA = A.length();
