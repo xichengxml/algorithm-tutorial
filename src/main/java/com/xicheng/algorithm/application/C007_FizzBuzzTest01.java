@@ -28,6 +28,6 @@ public class C007_FizzBuzzTest01 {
 
     public static void main(String[] args) {
         List<String> stringList = fizzBuzz(15);
-        stringList.stream().forEach(System.out::println);
+        stringList.forEach(System.out::println);
     }
 }
